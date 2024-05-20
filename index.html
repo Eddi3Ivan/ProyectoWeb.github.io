@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos.css">
+        <title>Proyecto Web</title>
+    </head>
+    <body>
+        <h2>Manejador archivos CSV</h2>
+        <section id="read" class="section">
+            <table id="tablaCSV">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--La tabla aparecerá automáticamente-->
+                </tbody>
+            </table>
+        </section>
+
+        <input type="file" id="archivoCSV" accept=".csv">
+
+        <pre id="csvContent" style="display: none;"></pre>
+        
+        <section id="insert" class="section" style="display: none; text-align: center;">
+            <h2>Insertar Datos en CSV</h2>
+            <textarea id="newRow" placeholder="Ingresa los datos de la nueva fila separados por comas"></textarea>
+            <button onclick="insertRow()">Insertar</button>
+            <pre id="insertResult"></pre>
+        </section>
+
+        <section id="delete" class="section" style="display: none; text-align: center;">
+            <h2>Borrar Datos del CSV</h2>
+            <textarea id="deleteRow" placeholder="Ingresa el contenido exacto de la fila a borrar"></textarea>
+            <button onclick="deleteRow()">Borrar</button>
+            <pre id="deleteResult"></pre>
+        </section><br><br>
+
+        <nav>
+            <button class="btnMenu" onclick="showSection('insert')">Insertar Datos</button>
+            <button class="btnMenu" onclick="showSection('delete')">Borrar Datos</button>
+            <button class="btnMenu" onclick="showSection('read')">CSV Actualizado</button>
+            <button class="btnMenu" id="btnDescargar" onclick="downloadCSV()">Descargar CSV Modificado</button>
+        </nav>
+    </body>
+    <script src="app.js"></script>
+</html>
